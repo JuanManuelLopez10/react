@@ -1,4 +1,4 @@
-export const data = [
+const data = [
     {
         id:104030405,
         clase:"motos",
@@ -7,6 +7,7 @@ export const data = [
         nombre:"CFMoto MT 800 Touring",
         color:"Azul",
         precio:20190,
+        foto: "./assets/productos/motos/cfmotomt800touring.png"
     },
     {
         id:102010203,
@@ -16,6 +17,7 @@ export const data = [
         nombre:"Honda Wave 110 Gris",
         color:"Gris",
         precio:2490,
+        foto: "./assets/productos/motos/hondawave110gris.png"
     },
     {
         id:106011102,
@@ -25,6 +27,7 @@ export const data = [
         nombre:"Honda Navi 110 Blanca",
         color:"Blanco",
         precio:1990,
+        foto: "./assets/productos/motos/hondanavi110blanca.png"
     },
     {
         id:101010104,
@@ -34,6 +37,7 @@ export const data = [
         nombre:"Honda CB1 125 Roja",
         color:"Rojo",
         precio:2350,
+        foto: "./assets/productos/motos/hondacb1roja.png"
     },
     {
         id:105010905,
@@ -44,6 +48,11 @@ export const data = [
         color:"Azul",
         precio:2490,
         cant:1,
+        foto: "./assets/productos/motos/hondatwister125azul.png"
     },
 
 ]
+
+module.exports = {
+    data
+}
