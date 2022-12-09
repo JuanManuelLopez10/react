@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Item = (props) => {
 
     return(
@@ -5,7 +7,7 @@ const Item = (props) => {
                         <img src={props.foto} className="col-10" alt={props.nombre}/>
                         <div className="card-body">
                             <div className="col-12">
-                                <h5 className="card-title">{props.nombre}</h5>
+                                <Link to={`/item/${props.id}`}>{props.nombre}</Link>
                             </div>
                             <div className="col-12">
                                 <p className="card-text">USD {props.precio}</p>

@@ -17,7 +17,7 @@ const data = [
         nombre:"Honda Wave 110 Gris",
         color:"Gris",
         precio:2490,
-        foto: "./assets/productos/motos/hondawave110gris.png"
+        foto: "https://iili.io/Hnlrjx1.png"
     },
     {
         id:106011102,
