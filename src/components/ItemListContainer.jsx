@@ -21,9 +21,11 @@ const ItemListContainer = () => {
         }
         
     }, [idCat])
-    
+
     return(
+    <>
         <ItemList datos={datos}/>
+    </>
     )
 }
 

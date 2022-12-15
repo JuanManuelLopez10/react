@@ -7,7 +7,8 @@ const data = [
         nombre:"CFMoto MT 800 Touring",
         color:"Azul",
         precio:20190,
-        foto: "./assets/productos/motos/cfmotomt800touring.png"
+        foto: "https://iili.io/HoWB6GI.png",
+
     },
     {
         id:102010203,
@@ -20,6 +21,26 @@ const data = [
         foto: "https://iili.io/Hnlrjx1.png"
     },
     {
+        id:102010201,
+        clase:"motos",
+        category:1,
+        abreviado:"hondawave110negra",
+        nombre:"Honda Wave 110 Negra",
+        color:"Negro",
+        precio:2490,
+        foto: "https://iili.io/HoWC7wv.png",
+    },
+    {
+        id:102010201,
+        clase:"motos",
+        category:1,
+        abreviado:"hondawave110blanca",
+        nombre:"Honda Wave 110 Blanca",
+        color:"Blanco",
+        precio:2490,
+        foto: "https://iili.io/HoWCR9a.png",
+    },
+    {
         id:106011102,
         clase:"motos",
         category:2,
@@ -27,7 +48,17 @@ const data = [
         nombre:"Honda Navi 110 Blanca",
         color:"Blanco",
         precio:1990,
-        foto: "./assets/productos/motos/hondanavi110blanca.png"
+        foto: "https://iili.io/HoWCfuj.png",
+    },
+    {
+        id:106011105,
+        clase:"motos",
+        category:2,
+        abreviado:"hondanavi110azul",
+        nombre:"Honda Navi 110 Azul",
+        color:"Azul",
+        precio:1990,
+        foto: "https://iili.io/HoWCFyb.png",
     },
     {
         id:101010104,
@@ -37,7 +68,18 @@ const data = [
         nombre:"Honda CB1 125 Roja",
         color:"Rojo",
         precio:2350,
-        foto: "./assets/productos/motos/hondacb1roja.png"
+        foto: "https://iili.io/HoWBmZl.png",
+    },
+    {
+        id:105010901,
+        clase:"motos",
+        category:4,
+        abreviado:"hondatwister125negra",
+        nombre:"Honda Twister 125 Negra",
+        color:"Negro",
+        precio:2490,
+        cant:1,
+        foto: "https://iili.io/HoWCIF1.png"
     },
     {
         id:105010905,
@@ -48,9 +90,19 @@ const data = [
         color:"Azul",
         precio:2490,
         cant:1,
-        foto: "./assets/productos/motos/hondatwister125azul.png"
+        foto: "https://iili.io/HoWCoMB.png"
     },
-
+    {
+        id:105010904,
+        clase:"motos",
+        category:4,
+        abreviado:"hondatwister125roja",
+        nombre:"Honda Twister 125 Roja",
+        color:"Rojo",
+        precio:2490,
+        cant:1,
+        foto: "https://iili.io/HoWCTcF.png"
+    },
 ]
 
 module.exports = {

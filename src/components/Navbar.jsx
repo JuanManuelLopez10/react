@@ -7,7 +7,7 @@ const Navbar = () => {
     return(
         <>
         <header>
-            <nav id="header" className="container-fluid d-flex justify-content-around animate__animated animate__fadeInDown">
+            <nav id="header" className="container-fluid d-flex justify-content-between animate__animated animate__fadeInDown">
                 <div className="col-2 d-flex justify-content-center  align-items-center" id="divlogoheader">
                 <Link to='/'>MOTOS PUNTA</Link>
                 </div>
