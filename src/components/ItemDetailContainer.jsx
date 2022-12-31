@@ -1,23 +1,39 @@
 import { useEffect, useState } from "react";
 import ItemDetail from './ItemDetail'
-import { customFetch } from "../utils/customFetch";
 import { useParams } from "react-router-dom";
-const { data } = require('../utils/data')
+import GrowExample from "./Spinner";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../utils/firebaseConfig'
 
 const ItemDetailContainer = () => {
-    const [dato, setDatos] = useState({})
+    const [dato, setDato] = useState({})
     const { idItem } = useParams();
 
     useEffect(() => {
-        
-        customFetch(2000, data.find(item => item.id == idItem))
-            .then(result => setDatos(result))
+        const fetchIndividual = async() => {
+            const docRef = doc(db, "productos", idItem);
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                return {
+                    id: idItem,
+                    ...docSnap.data()
+                }
+            }
+        }
+        fetchIndividual()
+            .then(result => setDato(result))
             .catch(err => console.log(err))
     }, [])
-    
+    if (dato.id===undefined) {
+        return(
+            <GrowExample/>
+        )
+    }else{
     return(
         <ItemDetail item={dato}/>
     )
+}
 }
 
 export default ItemDetailContainer;

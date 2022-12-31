@@ -1,32 +1,43 @@
 import { useEffect, useState } from "react";
 import ItemList from './ItemList'
-import { data } from '../utils/data'
-import { customFetch } from "../utils/customFetch";
 import { useParams } from "react-router-dom";
+import { db } from '../utils/firebaseConfig'
+import { collection, getDocs, query, where } from "firebase/firestore"; 
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([])
     const { idCat } = useParams();
-
-
     useEffect(() => {
-        if (idCat){
-            customFetch(2000, data.filter(item => item.category == idCat))
-            .then(response => setDatos(response))
-            .catch(err => console.log(err))
-        }else{
-            customFetch(2000, data)
-            .then(response => setDatos(response))
-            .catch(err => console.log(err))
+        const fetchFirestore = async() => {
+            let q;
+            if(idCat){
+                q = query(collection(db, "productos"), where('category','==', parseInt(idCat)))
+            }else{
+                q = query(collection(db, "productos"))
+            }
+            const querySnapshot = await getDocs(q);
+            const datosdeFirestore = querySnapshot.docs.map(item => ({
+                id: item.id,
+                ...item.data()
+            }))
+            return datosdeFirestore;
         }
-        
-    }, [idCat])
+        fetchFirestore()
+            .then(result => setDatos(result))
+            .catch(err => console.log(err))
+    }, [idCat]);
+    if (datos.length===0) {
+        return(
+            <h1>Cargando...</h1>
+        )
+    }else{
+        return(
+            <>
+                <ItemList datos={datos}/>
+            </>
+        )
 
-    return(
-    <>
-        <ItemList datos={datos}/>
-    </>
-    )
+    }
 }
 
 export default ItemListContainer;

@@ -3,6 +3,29 @@
   overflow-y: hidden;
   z-index: 8;
 }
+.botonabrircarrito{
+  background: none;
+  border: none;
+}
+.cardtitulo{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.cardprecio{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+.itemModalCartnombre{
+  font-size: 1.3rem;
+}
+.itemModalCartcantidad{
+  font-size: 1rem;
+}
+.itemModalCartprecio{
+  font-size: 1.1rem;
+}
 .carrito{
   color: white;
   margin: 10px;
@@ -40,4 +63,25 @@
 .opcionclase:focus::after{
   transform: scale(1);
 }
-
+#Cart_detalle{
+  border: solid black 1px;
+}
+.card-body{
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+.card-producto{
+  box-shadow: 1px 1px 5px black;
+  text-decoration: none;
+}
+.card-producto:hover{
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}
+.card-producto:hover::after{
+  transform: scale(1);
+  transition-duration: 0.5s;
+}
+.nn{
+  text-decoration: none;
+}
